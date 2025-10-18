@@ -1,0 +1,15 @@
+/* /css/styles.css */
+
+/* Estilo para la sección principal (hero) */
+.hero-section {
+    background-color: #f8f9fa; /* Color de fondo claro */
+}
+
+/* Estilo para centrar la imagen en la sección principal */
+.rounded-circle {
+    border: 5px solid #007bff; /* Borde de color primario */
+}
+
+/* Estilos de botones y otros elementos de Bootstrap se aplicarán automáticamente */
+
+/* Puedes agregar estilos adicionales de color, tipografía o espaciado aquí */
