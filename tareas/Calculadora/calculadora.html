@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Minimalista</title>
+    
+    <style>
+        /* Base y centrado */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f7fa; /* Fondo general muy claro */
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Contenedor principal de la calculadora (Recuadro Blanco con Sombra) */
+        .calculadora {
+            border-radius: 15px; /* Bordes suaves */
+            padding: 25px;
+            background-color: #ffffff; /* Fondo blanco puro */
+            width: 300px;
+            /* La clave del diseño minimalista: una sombra suave y extendida */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Pantalla (Display) */
+        #display {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0; /* Borde muy sutil */
+            border-radius: 8px;
+            text-align: right;
+            font-size: 2.5em; /* Números grandes */
+            background-color: #fcfcfc; /* Casi blanco */
+            color: #333;
+            box-sizing: border-box;
+            /* Sombra interna para simular que está hundido */
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Contenedor de botones */
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px; /* Mayor espacio entre botones para un look limpio */
+        }
+
+        /* Estilo base del botón */
+        button {
+            padding: 20px 0;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #333;
+            background-color: #f0f0f0; /* Fondo de botones gris muy claro */
+            /* Sombra sutil para los botones */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Efecto al pasar el mouse */
+        button:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-1px); /* Pequeño levantamiento */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos específicos para operadores y limpiar */
+        .operador, .limpiar {
+            color: #ffffff; /* Texto blanco para operadores */
+            background-color: #007aff; /* Azul primario minimalista */
+        }
+
+        .operador:hover, .limpiar:hover {
+            background-color: #005bb5;
+        }
+
+        .igual {
+            grid-column: span 2;
+            color: #ffffff;
+            background-color: #28a745; /* Verde de éxito */
+        }
+
+        .igual:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Botón 'C' (Limpiar) en color de advertencia sutil */
+        .limpiar {
+            background-color: #ff3b30;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculadora">
+        <input type="text" id="display" disabled value="0"> 
+        
+        <div class="botones">
+            <button class="limpiar" onclick="clearDisplay()">C</button>
+            <button class="operador" onclick="appendToDisplay('/')">/</button>
+            <button class="operador" onclick="appendToDisplay('*')">x</button>
+            <button class="operador" onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operador" onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="igual" onclick="calculateResult()">=</button> 
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+
+        function appendToDisplay(value) {
+            // Maneja el caso inicial de '0'
+            if (display.value === '0' && value !== '.') {
+                // Previene que se añada otro operador si ya hay uno al inicio, excepto '-'
+                if (['/', '*', '+'].includes(value)) {
+                    // Si el usuario presiona un operador al inicio, deja el 0
+                    return; 
+                }
+                display.value = value;
+            } else {
+                 // Previene la doble entrada de punto decimal
+                if (value === '.' && display.value.includes('.')) {
+                    return;
+                }
+                display.value += value;
+            }
+        }
+
+        function clearDisplay() {
+            display.value = '0';
+        }
+
+        function calculateResult() {
+            try {
+                // Usamos eval() para la simplicidad de la clase teórica
+                const resultado = eval(display.value.replace('x', '*')); 
+                display.value = resultado;
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

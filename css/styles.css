@@ -1,14 +1,283 @@
-/* /css/styles.css */
+/* =========================================
+   1. CONFIGURACIÓN GENERAL Y FUENTES
+   ========================================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    overflow-x: hidden; /* Evita scroll horizontal no deseado */
+}
 
-/* Estilo para la sección principal (hero) */
+/* =========================================
+   2. PANTALLA DE CARGA (SPLASH SCREEN)
+   ========================================= */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+    transition: opacity 1s ease-in-out, visibility 1s;
+}
+
+.intro-content {
+    text-align: center;
+    width: 300px; 
+}
+
+/* Texto WELCOME */
+.intro-text {
+    font-family: 'Comfortaa', sans-serif;
+    color: #fff;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.intro-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: bounceIn 0.8s forwards;
+    animation-delay: calc(0.15s * var(--i));
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    60% { transform: translateY(5px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Barra de Carga */
+.loading-container {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0; 
+    animation: fadeInBar 0.5s forwards 1.5s; 
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    /* Gradiente blanco a plomo minimalista */
+    background: linear-gradient(90deg, #ffffff, #a8a8a8);
+    border-radius: 2px;
+    animation: loadProgress 2s cubic-bezier(0.23, 1, 0.32, 1) forwards 1.6s;
+}
+
+/* Texto LISTO */
+#text-ready {
+    margin-top: 15px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #888;
+    opacity: 0;
+}
+
+#text-ready.show {
+    opacity: 1;
+    transition: opacity 0.5s;
+    color: #fff;
+}
+
+@keyframes fadeInBar { to { opacity: 1; } }
+@keyframes loadProgress { 0% { width: 0%; } 100% { width: 100%; } }
+
+/* Salida del Splash */
+#intro-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* =========================================
+   3. NAVBAR FLOTANTE (MENÚ PASTILLA)
+   ========================================= */
+.custom-navbar {
+    top: 20px;
+    padding: 0;
+    transition: top 0.3s;
+}
+
+.navbar-pill {
+    background: rgba(255, 255, 255, 0.90); /* Un poco translúcido */
+    backdrop-filter: blur(12px); /* Efecto vidrio borroso */
+    padding: 10px 30px;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.navbar-pill .nav-link {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.navbar-pill .nav-link:hover {
+    color: #000;
+    background-color: rgba(0,0,0,0.03);
+}
+
+.navbar-pill .nav-link.active {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* =========================================
+   4. HERO SECTION (BIENVENIDA)
+   ========================================= */
 .hero-section {
-    background-color: #f8f9fa; /* Color de fondo claro */
+    min-height: 100vh;
+    padding-top: 100px;
+    background-color: #fff;
 }
 
-/* Estilo para centrar la imagen en la sección principal */
-.rounded-circle {
-    border: 5px solid #007bff; /* Borde de color primario */
+/* Efecto de Escritura (Caja Gris) */
+.typing-container {
+    background-color: #f3f4f6;
+    padding: 5px 15px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    color: #333;
 }
 
-/* Estilos de botones y otros elementos de Bootstrap se aplicarán automáticamente */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: #333;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+    height: 1.2em; /* Altura del cursor ajustada */
+}
 
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Imagen Principal */
+.image-wrapper {
+    position: relative;
+    padding: 10px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.hero-image {
+    border-radius: 20px;
+    max-height: 500px;
+    width: 80%;
+    object-fit: cover;
+    border: 1px solid #f0f0f0;
+}
+
+
+/* =========================================
+   5. AJUSTES PARA OTRAS PÁGINAS (About, Projects)
+   ========================================= */
+/* Clase para dar espacio arriba en páginas que no son el Home */
+.page-container {
+    padding-top: 140px; /* Más espacio para que no choque con el menú */
+    padding-bottom: 60px;
+}
+
+
+/* =========================================
+   6. RESPONSIVE (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Ajuste texto bienvenida */
+    .intro-text {
+        font-size: 1.8rem;
+    }
+
+    /* Ajuste Menú en celular */
+    .custom-navbar {
+        top: 15px; /* Un poco más arriba */
+    }
+    
+    .navbar-pill {
+        padding: 8px 15px; /* Menos relleno */
+        gap: 5px; /* Menos espacio entre items */
+        width: 95%; /* Que ocupe casi todo el ancho */
+        justify-content: space-around;
+    }
+    
+    .navbar-pill .nav-link {
+        font-size: 0.75rem; /* Texto más pequeño */
+        padding: 5px 8px;
+        display: flex;
+        flex-direction: column; /* Icono arriba, texto abajo */
+        align-items: center;
+        line-height: 1.2;
+    }
+    
+    .navbar-pill .nav-link i {
+        font-size: 1.1rem;
+        margin-right: 0 !important; /* Quitar margen lateral */
+        margin-bottom: 2px;
+    }
+
+    /* Ajuste Hero */
+    .hero-section {
+        text-align: center; /* Centrar todo en móvil */
+        padding-top: 140px;
+    }
+    
+    .hero-section .text-start {
+        text-align: center !important;
+    }
+    
+    .typing-container {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .d-flex.gap-3 {
+        justify-content: center; /* Centrar botones */
+    }
+    
+    .social-icons {
+        justify-content: center !important;
+    }
+}
+
+/* =========================================
+   7. TRANSICIONES SUAVES ENTRE PÁGINAS
+   ========================================= */
+
+/* Color base del navegador para evitar parpadeos negros/blancos */
+html {
+    background-color: #ffffff; 
+}
+
+/* Estado inicial del cuerpo: Invisible pero listo para animar */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* 0.5 segundos de suavidad */
+}
+
+/* Clase que agregaremos con JS para mostrar la página */
+body.fade-in {
+    opacity: 1;
+}

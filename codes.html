@@ -4,58 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Códigos y Ejercicios DBP - Mi Portafolio</title>
+    <title>Códigos y Ejercicios | Kieberlyn Rodolfo</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- CSS Adicional para mejor UX: Indica que la imagen es clicable -->
     <style>
-        .cursor-pointer {
+        .hover-zoom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
         }
-
-        .cursor-pointer:hover {
-            transform: scale(1.03);
-            /* Ligeramente más grande al pasar el ratón */
+        .hover-zoom:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        
+        /* Ajustes para el acordeón moderno */
+        .accordion-item {
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #f8f9fa;
+            color: #000;
+            box-shadow: none;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,0.1);
         }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Kieberlyn Rodolfo Huanca Ramirez</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre Mí</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="codes.html">Códigos</a>
-                    </li>
-
-                </ul>
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container-fluid justify-content-center">
+            <div class="navbar-pill shadow-sm">
+                <a class="nav-link" href="index.html"><i class="bi bi-house-door-fill me-1"></i> Inicio</a>
+                <a class="nav-link" href="about.html"><i class="bi bi-person-fill me-1"></i> Sobre Mí</a>
+                <a class="nav-link" href="projects.html"><i class="bi bi-briefcase-fill me-1"></i> Proyectos</a>
+                <a class="nav-link active" href="codes.html"><i class="bi bi-code-slash me-1"></i> Códigos</a>
             </div>
         </div>
     </nav>
 
-    <header class="bg-light text-dark py-5">
-        <div class="container text-center">
-            <h1 class="display-4">Códigos y Prácticas</h1>
-            <p class="lead">Ejercicios DBP, Proyectos, y Prácticas Libres.</p>
+    <main class="container page-container">
+        
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold" style="font-family: 'Comfortaa', sans-serif;">Códigos y Prácticas</h1>
+            <p class="text-muted fs-5">Colección de ejercicios DBP, Proyectos y Prácticas Libres.</p>
+            
             <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i.git" target="_blank"
-                class="btn btn-primary mt-3">
-                Ver Repositorio General del Curso en GitHub
+                class="btn btn-dark rounded-pill px-4 mt-2">
+                <i class="bi bi-github me-2"></i> Ver Repositorio General
             </a>
         </div>
-    </header>
-
-    <section class="container my-5">
 
         <div class="accordion" id="codesAccordion">
 
@@ -63,58 +74,39 @@
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <i class="bi bi-code-slash me-2"></i> 📚 Ejercicios de Clase (DBP)
+                        <i class="bi bi-laptop me-2"></i> <strong>Ejercicios de Clase (DBP)</strong>
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#codesAccordion">
                     <div class="accordion-body p-4">
-                        <p class="mb-3">Códigos rápidos desarrollados durante las sesiones. :D</p>
+                        <p class="mb-4 text-muted">Códigos rápidos desarrollados durante las sesiones de aprendizaje.</p>
 
-                        <ul class="nav nav-tabs" id="classTabs" role="tablist">
-                            <li class="nav-item" role="presentation"><button class="nav-link active" id="html-tab"
-                                    data-bs-toggle="tab" data-bs-target="#html-pane" type="button" role="tab"
-                                    aria-controls="html-pane" aria-selected="true">HTML</button></li>
-                            <li class="nav-item" role="presentation"><button class="nav-link" id="css-tab"
-                                    data-bs-toggle="tab" data-bs-target="#css-pane" type="button" role="tab"
-                                    aria-controls="css-pane" aria-selected="false">CSS</button></li>
-                            <li class="nav-item" role="presentation"><button class="nav-link" id="js-tab"
-                                    data-bs-toggle="tab" data-bs-target="#js-pane" type="button" role="tab"
-                                    aria-controls="js-pane" aria-selected="false">JavaScript</button></li>
-                            <li class="nav-item" role="presentation"><button class="nav-link" id="general-tab"
-                                    data-bs-toggle="tab" data-bs-target="#general-pane" type="button" role="tab"
-                                    aria-controls="general-pane" aria-selected="false">Codigos en General</button></li>
+                        <ul class="nav nav-pills mb-3" id="classTabs" role="tablist">
+                            <li class="nav-item"><button class="nav-link active bg-dark" id="html-tab" data-bs-toggle="tab" data-bs-target="#html-pane" type="button">HTML</button></li>
+                            <li class="nav-item mx-1"><button class="nav-link text-dark" id="css-tab" data-bs-toggle="tab" data-bs-target="#css-pane" type="button">CSS</button></li>
+                            <li class="nav-item mx-1"><button class="nav-link text-dark" id="js-tab" data-bs-toggle="tab" data-bs-target="#js-pane" type="button">JavaScript</button></li>
+                            <li class="nav-item"><button class="nav-link text-dark" id="general-tab" data-bs-toggle="tab" data-bs-target="#general-pane" type="button">General</button></li>
                         </ul>
 
-                        <div class="tab-content border border-top-0 p-3" id="classTabsContent">
-                            <div class="tab-pane fade show active" id="html-pane" role="tabpanel"
-                                aria-labelledby="html-tab" tabindex="0">
-                                <h5>Módulo 1: HTML</h5>
-                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/HTML"
-                                    target="_blank" class="btn btn-sm btn-outline-secondary">Ver Códigos en GitHub</a>
+                        <div class="tab-content border rounded p-3 bg-light" id="classTabsContent">
+                            <div class="tab-pane fade show active" id="html-pane" role="tabpanel">
+                                <h6 class="fw-bold">Módulo 1: HTML</h6>
+                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/HTML" target="_blank" class="btn btn-sm btn-outline-dark">Ver en GitHub <i class="bi bi-box-arrow-up-right"></i></a>
                             </div>
-                            <div class="tab-pane fade" id="css-pane" role="tabpanel" aria-labelledby="css-tab"
-                                tabindex="0">
-                                <h5>Módulo 2: CSS</h5>
-                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/CSS"
-                                    target="_blank" class="btn btn-sm btn-outline-secondary">Ver Códigos en GitHub</a>
+                            <div class="tab-pane fade" id="css-pane" role="tabpanel">
+                                <h6 class="fw-bold">Módulo 2: CSS</h6>
+                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/CSS" target="_blank" class="btn btn-sm btn-outline-dark">Ver en GitHub <i class="bi bi-box-arrow-up-right"></i></a>
                             </div>
-                            <div class="tab-pane fade" id="js-pane" role="tabpanel" aria-labelledby="js-tab"
-                                tabindex="0">
-                                <h5>Módulo 3: JavaScript</h5>
-                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/JS"
-                                    target="_blank" class="btn btn-sm btn-outline-secondary">Ver Códigos en GitHub</a>
+                            <div class="tab-pane fade" id="js-pane" role="tabpanel">
+                                <h6 class="fw-bold">Módulo 3: JavaScript</h6>
+                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/JS" target="_blank" class="btn btn-sm btn-outline-dark">Ver en GitHub <i class="bi bi-box-arrow-up-right"></i></a>
                             </div>
-
-                            <div class="tab-pane fade" id="general-pane" role="tabpanel" aria-labelledby="general-tab"
-                                tabindex="0">
-                                <h5>Módulo 4: General</h5>
-                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/General"
-                                    target="_blank" class="btn btn-sm btn-outline-secondary">Ver Códigos en GitHub</a>
+                            <div class="tab-pane fade" id="general-pane" role="tabpanel">
+                                <h6 class="fw-bold">Módulo 4: General</h6>
+                                <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/tree/main/01_unidad_1_frontend/clase/General" target="_blank" class="btn btn-sm btn-outline-dark">Ver en GitHub <i class="bi bi-box-arrow-up-right"></i></a>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -123,510 +115,426 @@
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <i class="bi bi-clipboard-check me-2"></i> 📝 Tareas DBP
+                        <i class="bi bi-clipboard-check me-2"></i> <strong>Tareas DBP</strong>
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#codesAccordion">
-
-                    <!-- TAREA 1: -->
+                    
                     <div class="accordion-body">
-                        <h5>Tarea 1: Primer HTML</h5>
-                        <p>Elaboracion de un documento pdf a cerca de un computador y reacerlo solo usando codigo HTML.
-                        </p>
-
-                        <div class="my-3">
-                            <img src="img/tareas/tarea1.png" class="img-fluid rounded shadow-sm cursor-pointer"
-                                alt="Vista previa de Tarea 1" style="max-width: 300px; height: auto;"
-                                data-bs-toggle="modal" data-bs-target="#modalTarea1">
+                        <div class="mb-5 border-bottom pb-4">
+                            <h5>Tarea 1: Primer HTML</h5>
+                            <p class="text-muted small">Recreación de un documento PDF sobre computadoras utilizando solo código HTML puro.</p>
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <img src="img/tareas/tarea1.png" class="img-fluid rounded hover-zoom shadow-sm"
+                                        alt="Tarea 1" data-bs-toggle="modal" data-bs-target="#modalTarea1">
+                                </div>
+                                <div class="col-md-8 mt-3 mt-md-0">
+                                    <a href="tareas/Tarea_1/tarea_1.html" target="_blank" class="btn btn-success me-2 mb-2"><i class="bi bi-globe"></i> Entrar</a>
+                                    <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/tarea1-solo-html" target="_blank" class="btn btn-outline-dark mb-2"><i class="bi bi-github"></i> Código GitHub</a>
+                                </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <a href="https://tuusuario.github.io/dbp-ejercicios-unidad-i/tarea_1/" target="_blank"
-                                class="btn btn-success me-2">
-                                Ver Demo en Línea 🌐 /aun subiendo/
-                            </a>
+                        <div class="mb-5 border-bottom pb-4">
+                            <h5>Tarea 2: Diseño con Contenedores</h5>
+                            <p class="text-muted small">Implementación de estructuras de página web utilizando la clase 'container'.</p>
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <img src="img/tareas/tarea2.png" class="img-fluid rounded hover-zoom shadow-sm"
+                                        alt="Tarea 2" data-bs-toggle="modal" data-bs-target="#modalTarea2">
+                                </div>
+                                <div class="col-md-8 mt-3 mt-md-0">
+                                    <a href="tareas/Tarea_2/mi_pagina_con_contenedores.html" target="_blank" class="btn btn-success me-2 mb-2"><i class="bi bi-globe"></i> Entrar</a>
+                                    <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/container" target="_blank" class="btn btn-outline-dark mb-2"><i class="bi bi-github"></i> Código GitHub</a>
+                                </div>
+                            </div>
+                        </div>
 
-                            <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/tarea1-solo-html"
-                                target="_blank" class="btn btn-outline-primary">
-                                Ver Código en GitHub 📋
-                            </a>
+                        <div class="mb-5 border-bottom pb-4">
+                            <h5>Tarea 3: Dibujo CSS (Computador)</h5>
+                            <p class="text-muted small">Creación artística de un computador utilizando únicamente HTML y CSS (Figuras geométricas).</p>
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <img src="img/tareas/tarea3.png" class="img-fluid rounded hover-zoom shadow-sm"
+                                        alt="Tarea 3" data-bs-toggle="modal" data-bs-target="#modalTarea3">
+                                </div>
+                                <div class="col-md-8 mt-3 mt-md-0">
+                                    <a href="tareas/Tarea_3/computador.html" target="_blank" class="btn btn-success me-2 mb-2"><i class="bi bi-globe"></i> Entrar</a>
+                                    <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/Tarea%203%3A%20Dibujo%20computador" target="_blank" class="btn btn-outline-dark mb-2"><i class="bi bi-github"></i> Código GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <h5>Tarea 4: Calculadora JS</h5>
+                            <p class="text-muted small">Calculadora funcional aplicando lógica de programación con JavaScript.</p>
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <img src="img/tareas/tarea4.png" class="img-fluid rounded hover-zoom shadow-sm"
+                                        alt="Tarea 4" data-bs-toggle="modal" data-bs-target="#modalTarea4">
+                                </div>
+                                <div class="col-md-8 mt-3 mt-md-0">
+                                    <a href="tareas/Calculadora/calculadora.html" target="_blank" class="btn btn-success me-2 mb-2"><i class="bi bi-globe"></i> Entrar </a>
+                                    <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/Tarea%204:%20calculadora" target="_blank" class="btn btn-outline-dark mb-2"><i class="bi bi-github"></i> Código GitHub</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- TAREA 2: -->
-                    <div class="accordion-body">
-                        <h5>Tarea 2: Diseño </h5>
-                        <p>Elaboracion e iniciacion de un contenedor para pagina web con "container".
-                        </p>
-
-                        <div class="my-3">
-                            <img src="img/tareas/tarea2.png" class="img-fluid rounded shadow-sm cursor-pointer"
-                                alt="Vista previa de Tarea 2" style="max-width: 300px; height: auto;"
-                                data-bs-toggle="modal" data-bs-target="#modalTarea2">
-                        </div>
-
-                        <div>
-                            <a href="https://tuusuario.github.io/dbp-ejercicios-unidad-i/tarea_1/" target="_blank"
-                                class="btn btn-success me-2">
-                                Ver Demo en Línea 🌐 /aun subiendo/
-                            </a>
-
-                            <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/container"
-                                target="_blank" class="btn btn-outline-primary">
-                                Ver Código en GitHub 📋
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- TAREA 3: -->
-                    <div class="accordion-body">
-                        <h5>Tarea 3: Dibujar con figuras un computador </h5>
-                        <p>solo usando styles y figuras - se crea un dibujo de un computador.
-                        </p>
-
-                        <div class="my-3">
-                            <img src="img/tareas/tarea3.png" class="img-fluid rounded shadow-sm cursor-pointer"
-                                alt="Vista previa de Tarea 1" style="max-width: 300px; height: auto;"
-                                data-bs-toggle="modal" data-bs-target="#modalTarea3">
-                        </div>
-
-                        <div>
-                            <a href="https://tuusuario.github.io/dbp-ejercicios-unidad-i/tarea_1/" target="_blank"
-                                class="btn btn-success me-2">
-                                Ver Demo en Línea 🌐 /aun subiendo/
-                            </a>
-
-                            <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/Tarea%203%3A%20Dibujo%20computador"
-                                target="_blank" class="btn btn-outline-primary">
-                                Ver Código en GitHub 📋
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- TAREA 4: -->
-                    <div class="accordion-body">
-                        <h5>Tarea 4: Calculadora</h5>
-                        <p>aplicando .html .css .js en una calculadora.
-                        </p>
-
-                        <div class="my-3">
-                            <img src="img/tareas/tarea4.png" class="img-fluid rounded shadow-sm cursor-pointer"
-                                alt="Vista previa de Tarea 1" style="max-width: 300px; height: auto;"
-                                data-bs-toggle="modal" data-bs-target="#modalTarea4">
-                        </div>
-
-                        <div>
-                            <a href="https://tuusuario.github.io/dbp-ejercicios-unidad-i/tarea_1/" target="_blank"
-                                class="btn btn-success me-2">
-                                Ver Demo en Línea 🌐 /aun subiendo/
-                            </a>
-
-                            <a href="https://github.com/RodolfoHuanca/dbp-ejercicios-unidad-i/blob/main/01_unidad_1_frontend/tareas/Tarea%204:%20calculadora"
-                                target="_blank" class="btn btn-outline-primary">
-                                Ver Código en GitHub 📋
-                            </a>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
-
-
 
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <i class="bi bi-folder-fill me-2"></i> 🚀 Proyectos DBP
+                        <i class="bi bi-folder-fill me-2"></i> <strong>Proyectos DBP</strong>
                     </button>
                 </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#codesAccordion">
+                    <div class="accordion-body">
+                        <div class="p-4 bg-light rounded-3 border">
+                            <h5 class="fw-bold">🚀 Proyecto Final Unidad I: Portafolio Web</h5>
+                            <p>Este mismo sitio web es el resultado de la integración de Frontend, Git, Transferencia de archivos y Hosting.</p>
+                            <a href="https://github.com/RodolfoHuanca/mi-sitio-web" target="_blank"
+                                class="btn btn-dark"><i class="bi bi-github me-2"></i> Ver Repositorio del Portafolio</a>
+                        </div>
+                    </div>
+                </div>
 
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#codesAccordion">
                     <div class="accordion-body">
-                        <h5>Proyecto Final de Unidad I: Mi Portafolio Web Interactivo (Este mismo)</h5>
-                        <p>Este proyecto usa todos los temas abordados del curso (Frontend, Git,
-                            Transferencia, Hosting, ).</p>
-                        <a href="https://github.com/RodolfoHuanca/mi-sitio-web" target="_blank"
-                            class="btn btn-sm btn-outline-danger">Ver Repositorio del Portafolio</a>
+                        <div class="p-4 bg-light rounded-3 border">
+                            <h5 class="fw-bold">🚀 Proyecto Final Unidad II: Sistema de Ventas</h5>
+                            <p>Este mismo sitio web es el resultado de la integración de Frontend, Git, Transferencia de archivos y Hosting.</p>
+                            <a href="https://github.com/RodolfoHuanca/SistemaVentas.git" target="_blank"
+                                class="btn btn-dark"><i class="bi bi-github me-2"></i> Ver Repositorio del Portafolio</a>
+                        </div>
                     </div>
                 </div>
 
             </div>
 
-
-
+            <!-- practicas de desarrollo web -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        <i class="bi bi-server me-2"></i> ☁️ Prácticas
+                        <i class="bi bi-code me-2"></i> <strong>Prácticas de Desarrollo Web</strong>
                     </button>
                 </h2>
-
-                <!-- 1 -->
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                     data-bs-parent="#codesAccordion">
                     <div class="accordion-body">
 
-                        <div class="d-flex align-items-center mb-3 p-2 border rounded">
-
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalPractica01">
-                                <img src="img/practicas/prcatica1.png" alt="Miniatura de Práctica 01"
-                                    style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px; border-radius: 5px; cursor: pointer;">
-                            </a>
-
+                        PRACTICA AJAX
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica_u2_1.jpg" alt="P1" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica01">
                             <div>
-                                <h5 class="mb-1">Práctica 01: Publicación con 000web host</h5>
-                                <p class="mb-1 text-muted">Ya no hace servicios gratuitos y por problemas de creacion de dominio taché esta practica.</p>
+                                <h6 class="fw-bold mb-1">Práctica 01: AJAX</h6>
+                                <p class="small text-muted mb-2">Descontinuado. El servicio gratuito cerró, pero se documentó el proceso.</p>
+                                <a href="https://docs.google.com/document/d/13g0tz9OHtQ--lmojpj3fmiW6I1AqnUszI5Jz4EX8YV4/edit?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                                
+                                <a href="practica.html" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-play-circle"></i>  Ver Práctica 
+                                </a>
 
-                                <a href="no_hecho_por_problemas_de_000webhost" target="_blank"
-                                    class="btn btn-sm btn-outline-info mt-1">
-                                    <-- CLICK a la imagen para Ver Documentación ( no HECHO )
+                            </div>
+                        </div>
+
+                         <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica_u2_2.png" alt="P2" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica02">
+                            <div>
+                                <h6 class="fw-bold mb-1">Práctica 02: Base de Datos con Java Script</h6>
+                                <p class="small text-muted mb-2">Configuración de hosting estático vinculado directamente al repositorio.</p>
+                                <a href="https://docs.google.com/document/d/1BTSSAFKp9HJ7foBJlD2nvEnUXvy8KNBkN7GP01b_QlU/edit?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                            
+                                <a href="" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-play-circle"></i>  Ver Práctica 
                                 </a>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-
-                <!-- 2 -->
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#codesAccordion">
-                    <div class="accordion-body">
-
-                        <div class="d-flex align-items-center mb-3 p-2 border rounded">
-
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalPractica02">
-                                <img src="img/practicas/practica2.jpg" alt="Miniatura de Práctica 02"
-                                    style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px; border-radius: 5px; cursor: pointer;">
-                            </a>
-
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica_u2_3.jpg" alt="P3" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica03">
                             <div>
-                                <h5 class="mb-1">Práctica 02: Publicación con GitHub Pages</h5>
-                                <p class="mb-1 text-muted">Configuración de hosting con GitHub Pages vinculado a visual studio code.</p>
-
-                                <a href="fue_esta_una_de_las_maneras_el_cual_hice_mi_pagina_web" target="_blank"
-                                    class="btn btn-sm btn-outline-info mt-1">
-                                    <-- CLICK a la imagen para Ver Documentación ( HECHO )
+                                <h6 class="fw-bold mb-1">Práctica 03: CRUD con Codeigniter</h6>
+                                <p class="small text-muted mb-2">Transferencia de archivos a servidor remoto mediante protocolo FTP.</p>
+                                <a href="https://docs.google.com/document/d/1EmrTf9kckuhkgeP9N4zlnXmu6GS2s-8fQboGG7JG-TY/edit?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                                
+                                <a href="" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-play-circle"></i>  Ver Práctica 
                                 </a>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-
-                <!-- 3 -->
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#codesAccordion">
-                    <div class="accordion-body">
-
-                        <div class="d-flex align-items-center mb-3 p-2 border rounded">
-
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalPractica03">
-                                <img src="img/practicas/practica3.png" alt="Miniatura de Práctica 03"
-                                    style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px; border-radius: 5px; cursor: pointer;">
-                            </a>
-
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica_u2_4.png" alt="P4" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica04">
                             <div>
-                                <h5 class="mb-1">Práctica 03: Publicar y Monitorear con PuTTY y FTP</h5>
-                                <p class="mb-1 text-muted">Usar un servidor FTP para publicar y monitorear la página web.</p>
-
-                                <a href="fue_esta_una_de_las_maneras_el_cual_hice_mi_pagina_web" target="_blank"
-                                    class="btn btn-sm btn-outline-info mt-1">
-                                    <-- CLICK a la imagen para Ver Documentación ( HECHO )
+                                <h6 class="fw-bold mb-1">Práctica 04: Reportes en PHP</h6>
+                                <p class="small text-muted mb-2">Gestión de servidor y publicación mediante terminal y comandos SSH.</p>
+                                <a href="https://docs.google.com/document/d/1YWZUm2PsyhG_Y10QUxewikQniAgPwI85S1luMHc00M0/edit?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                                
+                                <a href="" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-play-circle"></i>  Ver Práctica 
                                 </a>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-
-                <!-- 4 -->
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#codesAccordion">
-                    <div class="accordion-body">
-
-                        <div class="d-flex align-items-center mb-3 p-2 border rounded">
-
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalPractica04">
-                                <img src="img/practicas/practica4.jpg" alt="Miniatura de Práctica 04"
-                                    style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px; border-radius: 5px; cursor: pointer;">
-                            </a>
-
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica_u2_5.png" alt="P5" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica04">
                             <div>
-                                <h5 class="mb-1">Práctica 04: Publicar y Monitorear con PuTTY y comandos Linux</h5>
-                                <p class="mb-1 text-muted">Con ayuda de saber la Ip, hostname, puerto,etc publicamos en un servidor con comandos linux.</p>
-
-                                <a href="fue_esta_una_de_las_maneras_el_cual_hice_mi_pagina_web" target="_blank"
-                                    class="btn btn-sm btn-outline-info mt-1">
-                                    <-- CLICK a la imagen para Ver Documentación ( HECHO )
+                                <h6 class="fw-bold mb-1">Práctica 05: Consultas SQL</h6>
+                                <p class="small text-muted mb-2">Gestión de servidor y publicación mediante terminal y comandos SSH.</p>
+                                <a href="https://docs.google.com/document/d/1v7JvO1oQBWif73OkVsNgsyx_RXM9thuzO4mcJbUgwWA/edit?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                            
+                                <a href="practica.html" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-play-circle"></i>  Ver Práctica 
                                 </a>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-
-                <!-- 5 -->
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#codesAccordion">
-                    <div class="accordion-body">
-
-                        <div class="d-flex align-items-center mb-3 p-2 border rounded">
-
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalPractica05">
-                                <img src="img/practicas/practica5.png" alt="Miniatura de Práctica 05"
-                                    style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px; border-radius: 5px; cursor: pointer;">
-                            </a>
-
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica_u2_6.jpg" alt="P6" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica04">
                             <div>
-                                <h5 class="mb-1">Producto final de las practicas (05): Publicar en servidor externo mi pagina web</h5>
-                                <p class="mb-1 text-muted">Configuración de hosting estático usando ramas de Git.</p>
-
-                                <a href="https://kirohurati.wuaze.com" target="_blank"
-                                    class="btn btn-sm btn-outline-info mt-1">
-                                    CLICK aqui para entrar a la pagina web con dominio **https://kirohurati.wuaze.com**
+                                <h6 class="fw-bold mb-1">Práctica 06: Servidor WEB y PHP</h6>
+                                <p class="small text-muted mb-2">Gestión de servidor y publicación mediante terminal y comandos SSH.</p>
+                                <a href="https://docs.google.com/document/d/15u3FJgvvBGTlS5WvxMyPh34SNcPBXQaYps4CTNdhffs/edit?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                                <a href="practica.html" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-play-circle"></i>  Ver Práctica 
                                 </a>
-                            </div>
                         </div>
+
+                        
 
                     </div>
                 </div>
-
-
             </div>
-
-            <!-- MODAL PARA LAS PRCATICAS  -->
-            <!-- practica 1 -->
-            <div class="modal fade" id="modalPractica01" tabindex="-1" aria-labelledby="modalPractica01Label"
-                aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalPractica01Label">Práctica 01: Publicación con 000Web hosting - este Sitio ya no aloja servidores - x
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <img src="img/practicas/prcatica1.png" class="img-fluid"
-                                alt="Imagen completa de Práctica 01">
-                        </div>
-                        <div class="modal-footer">
-
-                            <a href="documentos/docP1.pdf" target="_blank" class="btn btn-primary">Ver
-                                Documentación Completa (PDF)</a>
-
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- practica 2 -->
-            <div class="modal fade" id="modalPractica02" tabindex="-1" aria-labelledby="modalPractica02Label"
-                aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalPractica02Label">Práctica 02: Publicación con GitHub Pages
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <img src="img/practicas/practica_ampliada2.png" class="img-fluid"
-                                alt="Imagen completa de Práctica 02">
-                        </div>
-                        <div class="modal-footer">
-
-                            <a href="documentos/docP2.pdf" target="_blank" class="btn btn-primary">Ver
-                                Documentación Completa (PDF)</a>
-
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- practica 3 -->
-            <div class="modal fade" id="modalPractica03" tabindex="-1" aria-labelledby="modalPractica03Label"
-                aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalPractica03Label">Práctica 03: Publicación y monitoreo con Filezilla y PuTTY en FTP
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <img src="img/practicas/practica_ampliada3.png" class="img-fluid"
-                                alt="Imagen completa de Práctica 03">
-                        </div>
-                        <div class="modal-footer">
-
-                            <a href="documentos/docP3.pdf" target="_blank" class="btn btn-primary">Ver
-                                Documentación Completa (PDF)</a>
-
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- practica 4 -->
-            <div class="modal fade" id="modalPractica04" tabindex="-1" aria-labelledby="modalPractica04Label"
-                aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalPractica04Label">Práctica 04: Publicación y monitoreo con Filezilla y PuTTY en FTP
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <img src="img/practicas/practica_ampliada4.png" class="img-fluid"
-                                alt="Imagen completa de Práctica 04">
-                        </div>
-                        <div class="modal-footer">
-
-                            <a href="documentos/docP4.pdf" target="_blank" class="btn btn-primary">Ver
-                                Documentación Completa (PDF)</a>
-
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- practica 5 -->
-            <div class="modal fade" id="modalPractica05" tabindex="-1" aria-labelledby="modalPractica05Label"
-                aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalPractica05Label">Producto final 05
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <img src="img/practicas/practica5.png" class="img-fluid"
-                                alt="Imagen completa de Práctica 05">
-                        </div>
-                        <div class="modal-footer">
-
-                            <a href="documentos/docP5.pdf" target="_blank" class="btn btn-primary">Ver
-                                Documentación Completa (PDF)</a>
-
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
 
 
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        <i class="bi bi-star me-2"></i> 💡 Prácticas Libres
+                        <i class="bi bi-server me-2"></i> <strong>Prácticas de Despliegue (Hosting)</strong>
                     </button>
                 </h2>
                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                     data-bs-parent="#codesAccordion">
                     <div class="accordion-body">
-                        <!-- <h5>--------------------</h5>
-                        <p>------------------------------</p>
-                        <a href="-----------------------------" target="_blank"
-                            class="btn btn-sm btn-success me-2">***************</a>
-                        <h5 class="mt-3">------------------------------</h5>
-                        <p>-----------------------------------</p>
-                        <a href="-----------------------------------------" target="_blank"
-                            class="btn btn-sm btn-success me-2">***************</a> -->
+
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/prcatica1.png" alt="P1" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica01">
+                            <div>
+                                <h6 class="fw-bold mb-1">Práctica 01: 000Webhost</h6>
+                                <p class="small text-muted mb-2">Descontinuado. El servicio gratuito cerró, pero se documentó el proceso.</p>
+                                <span class="badge bg-secondary">No disponible</span>
+                            </div>
+                        </div>
+
+                         <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica2.jpg" alt="P2" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica02">
+                            <div>
+                                <h6 class="fw-bold mb-1">Práctica 02: GitHub Pages</h6>
+                                <p class="small text-muted mb-2">Configuración de hosting estático vinculado directamente al repositorio.</p>
+                                <a href="documentos/docP2.pdf" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica3.png" alt="P3" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica03">
+                            <div>
+                                <h6 class="fw-bold mb-1">Práctica 03: FTP con FileZilla</h6>
+                                <p class="small text-muted mb-2">Transferencia de archivos a servidor remoto mediante protocolo FTP.</p>
+                                <a href="documentos/docP3.pdf" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4 p-3 border rounded-3 bg-white shadow-sm">
+                            <img src="img/practicas/practica4.jpg" alt="P4" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica04">
+                            <div>
+                                <h6 class="fw-bold mb-1">Práctica 04: Comandos Linux (PuTTY)</h6>
+                                <p class="small text-muted mb-2">Gestión de servidor y publicación mediante terminal y comandos SSH.</p>
+                                <a href="documentos/docP4.pdf" target="_blank" class="btn btn-sm btn-outline-dark">Ver Documentación</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start p-3 border rounded-3 bg-white shadow-sm border-start border-5 border-success">
+                            <img src="img/practicas/practica5.png" alt="P5" class="rounded hover-zoom me-3" 
+                                 style="width: 80px; height: 80px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPractica05">
+                            <div>
+                                <h6 class="fw-bold mb-1">Práctica 05: Producto Final (Wuaze)</h6>
+                                <p class="small text-muted mb-2">Despliegue final en servidor externo con dominio personalizado.</p>
+                                <a href="https://kirohurati.wuaze.com" target="_blank" class="btn btn-sm btn-success">Ir al Sitio Web</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <i class="bi bi-star me-2"></i> <strong>Prácticas Libres</strong>
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                    data-bs-parent="#codesAccordion">
+                    <div class="accordion-body text-center py-5 text-muted">
+                        <i class="bi bi-cone-striped fs-1 d-block mb-3"></i>
+                        <p>Sección en construcción para futuros proyectos personales.</p>
                     </div>
                 </div>
             </div>
 
         </div>
-    </section>
+    </main>
 
-    <footer class="text-center py-3 bg-dark text-white-50">
-        <p class="mb-0">&copy; 2025 Mi Portafolio Web.</p>
+    <footer class="text-center py-4 mt-5 text-muted small">
+        <p class="mb-0">&copy; 2025 Kieberlyn Rodolfo | Ingeniería de Sistemas</p>
     </footer>
 
-    <!-- MODALES (LIGHTBOX) PARA IMAGENES -->
-
-    <!-- MODAL TAREA 1 -->
-    <div class="modal fade" id="modalTarea1" tabindex="-1" aria-labelledby="modalTarea1Label" aria-hidden="true">
+    <div class="modal fade" id="modalTarea1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTarea1Label">Tarea 1: Vista Ampliada (Primer HTML)</h5>
+                    <h5 class="modal-title">Tarea 1: Vista Ampliada</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-
-                    <img src="img/tareas/tarea1.png" class="img-fluid" alt="Vista previa ampliada de Tarea 1">
+                <div class="modal-body text-center bg-light">
+                    <img src="img/tareas/tarea1.png" class="img-fluid shadow" alt="Tarea 1">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL TAREA 2 -->
-    <div class="modal fade" id="modalTarea2" tabindex="-1" aria-labelledby="modalTarea2Label" aria-hidden="true">
+    <div class="modal fade" id="modalTarea2" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTarea4Label">Tarea 2: Vista Ampliada (Diseño con Container)
-                    </h5>
+                    <h5 class="modal-title">Tarea 2: Vista Ampliada</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-
-                    <img src="img/tareas/tarea2.png" class="img-fluid" alt="Vista previa ampliada de Tarea 2">
+                <div class="modal-body text-center bg-light">
+                    <img src="img/tareas/tarea2.png" class="img-fluid shadow" alt="Tarea 2">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL TAREA 3 -->
-    <div class="modal fade" id="modalTarea3" tabindex="-1" aria-labelledby="modalTarea3Label" aria-hidden="true">
+    <div class="modal fade" id="modalTarea3" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTarea4Label">Tarea 3: Vista Ampliada (Dibujo Computador)
-                    </h5>
+                    <h5 class="modal-title">Tarea 3: Vista Ampliada</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-
-                    <img src="img/tareas/tarea3.png" class="img-fluid" alt="Vista previa ampliada de Tarea 3">
+                <div class="modal-body text-center bg-light">
+                    <img src="img/tareas/tarea3.png" class="img-fluid shadow" alt="Tarea 3">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL TAREA 4 -->
-    <div class="modal fade" id="modalTarea4" tabindex="-1" aria-labelledby="modalTarea4Label" aria-hidden="true">
+    <div class="modal fade" id="modalTarea4" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTarea4Label">Tarea 4: Vista Ampliada ( Calculadora )
-                    </h5>
+                    <h5 class="modal-title">Tarea 4: Vista Ampliada</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-
-                    <img src="img/tareas/tarea4.png" class="img-fluid" alt="Vista previa ampliada de Tarea 4">
+                <div class="modal-body text-center bg-light">
+                    <img src="img/tareas/tarea4.png" class="img-fluid shadow" alt="Tarea 4">
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modalPractica01" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="img/practicas/prcatica1.png" class="img-fluid mb-3" alt="P1">
+                    <br>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="documentos/docP1.pdf" target="_blank" class="btn btn-dark">Ver PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPractica02" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="img/practicas/practica2.jpg" class="img-fluid mb-3" alt="P2">
+                    <br>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="documentos/docP2.pdf" target="_blank" class="btn btn-dark">Ver PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPractica03" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="img/practicas/practica3.png" class="img-fluid mb-3" alt="P3">
+                    <br>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="documentos/docP3.pdf" target="_blank" class="btn btn-dark">Ver PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPractica04" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="img/practicas/practica4.jpg" class="img-fluid mb-3" alt="P4">
+                    <br>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="documentos/docP4.pdf" target="_blank" class="btn btn-dark">Ver PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPractica05" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="img/practicas/practica5.png" class="img-fluid mb-3" alt="P5">
+                    <br>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="documentos/docP5.pdf" target="_blank" class="btn btn-dark">Ver PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Computador moderno</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .computador-moderno {
+            position: relative;
+            transform: scale(1.2);
+        }
+
+        /* Cuerpo del computador */
+        .cuerpo {
+            width: 320px;
+            height: 220px;
+            background-color: #222;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Pantalla */
+        .pantalla-moderna {
+            width: 290px;
+            height: 180px;
+            background-color: #000;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #333;
+        }
+        
+        /* Simulación de la interfaz en la pantalla */
+        .interfaz {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a, #444);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0f0;
+            font-size: 20px;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        /* Cámara */
+        .camara-moderna {
+            width: 8px;
+            height: 8px;
+            background-color: #666;
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        /* Teclado y base */
+        .teclado-base {
+            width: 350px;
+            height: 100px;
+            background-color: #333;
+            position: absolute;
+            top: 210px;
+            left: -15px;
+            border-radius: 10px;
+            z-index: -1;
+            transform: perspective(200px) rotateX(20deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .teclado-moderno {
+            width: 300px;
+            height: 60px;
+            background-color: #1a1a1a;
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            border-radius: 8px;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tecla-moderna {
+            width: 18px;
+            height: 18px;
+            background-color: #444;
+            border-radius: 3px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.1s ease;
+        }
+        
+        /* Filas para un mejor layout del teclado */
+        .fila {
+            display: flex;
+            gap: 4px;
+            width: 100%;
+        }
+        .fila:first-child .tecla-moderna {
+             width: 25px;
+        }
+
+        /* Trackpad */
+        .trackpad {
+            width: 120px;
+            height: 30px;
+            background-color: #2a2a2a;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        /* Case del computador */
+        .computador-case {
+            width: 100px;
+            height: 150px;
+            background-color: #333;
+            position: absolute;
+            top: 100px;
+            right: -130px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frontal {
+            width: 80%;
+            height: 90%;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .boton-encendido {
+            width: 15px;
+            height: 15px;
+            background-color: #f00;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            box-shadow: 0 0 5px #f00;
+        }
+        
+        .puerto {
+            width: 40px;
+            height: 5px;
+            background-color: #555;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="computador-moderno">
+        <div class="cuerpo">
+            <div class="pantalla-moderna">
+                <div class="interfaz">
+                    ING SISTEMAS: Rodolfo
+                </div>
+            </div>
+            <div class="camara-moderna"></div>
+        </div>
+
+        <div class="teclado-base">
+            <div class="teclado-moderno">
+                <div class="fila">
+                    <div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div>
+                </div>
+                <div class="fila">
+                    <div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div>
+                </div>
+                <div class="fila">
+                    <div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div><div class="tecla-moderna"></div>
+                </div>
+            </div>
+            <div class="trackpad"></div>
+        </div>
+        
+        <div class="computador-case">
+            <div class="frontal">
+                <div class="boton-encendido"></div>
+                <div class="puerto"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

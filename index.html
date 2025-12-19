@@ -3,42 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | Mi Portafolio Web</title>
+    <title>Inicio | Kieberlyn Rodolfo</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">MI PAGINA WEB</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre Mí</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-                    
-                    <li class="nav-item"><a class="nav-link" href="codes.html">Códigos</a></li>
-                </ul>
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <h1 class="intro-text">
+                <span style="--i:1;">W</span>
+                <span style="--i:2;">e</span>
+                <span style="--i:3;">l</span>
+                <span style="--i:4;">c</span>
+                <span style="--i:5;">o</span>
+                <span style="--i:6;">m</span>
+                <span style="--i:7;">e</span>
+            </h1>
+            
+            <div class="loading-container">
+                <div class="loading-bar"></div>
+            </div>
+            
+            <div id="text-ready">LISTO</div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container-fluid justify-content-center">
+            <div class="navbar-pill shadow-sm">
+                <a class="nav-link active" href="index.html">
+                    <i class="bi bi-house-door-fill me-1"></i> Inicio
+                </a>
+                
+                <a class="nav-link" href="about.html">
+                    <i class="bi bi-person-fill me-1"></i> Sobre Mí
+                </a>
+                
+                <a class="nav-link" href="projects.html">
+                    <i class="bi bi-briefcase-fill me-1"></i> Proyectos
+                </a>
+                
+                <a class="nav-link" href="codes.html">
+                    <i class="bi bi-code-slash me-1"></i> Códigos
+                </a>
             </div>
         </div>
     </nav>
 
-    <header class="text-center py-5 hero-section">
+
+    <section class="hero-section d-flex align-items-center">
         <div class="container">
-            <img src="img/perfil.jpg" alt="Foto de Perfil" class="img-fluid rounded-circle mb-4" style="width: 150px; height: 150px; object-fit: cover;">
-            
-            <h1 class="display-4">¡Hola! Soy Kieberlyn Rodolfo Huanca Ramirez</h1>
-            <p class="lead" id="frase-dinamica">"**[ Frase motivadora que cambiará con JS ]**"</p>
-            
-            <div id="hora-actual" class="mt-3 badge bg-primary fs-5"></div>
+            <div class="row align-items-center">
+                
+                <div class="col-lg-6 text-start">
+                    <span class="badge bg-light text-dark border mb-3 px-3 py-2 rounded-pill">
+                        👋 ¡Hola mundo!
+                    </span>
+                    
+                    <h1 class="display-4 fw-bold mb-3" style="font-family: 'Comfortaa', sans-serif;">
+                        Soy Kieberlyn Rodolfo <br> Huanca Ramirez
+                    </h1>
+                    
+                    <h2 class="mb-4 d-flex align-items-center">
+                        <span class="typing-container">
+                            <span class="typing-text"></span><span class="cursor">|</span>
+                        </span>
+                    </h2>
+
+                    <p class="lead text-muted mb-5 pe-lg-5">
+                        Apasionado por la tecnología, transformo ideas complejas en código limpio y diseños funcionales.
+                    </p>
+
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#contacto" class="btn btn-dark rounded-pill px-4 py-2 shadow-sm">
+                            Contratar <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2">
+                            <i class="bi bi-file-earmark-arrow-down me-2"></i> Descargar CV
+                        </a>
+                    </div>
+
+                    <div class="mt-5">
+                        <p class="small text-muted mb-2 text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">Sígueme en</p>
+                        <div class="social-icons d-flex gap-3">
+                            <a href="https://github.com/RodolfoHuanca" class="text-dark fs-5"><i class="bi bi-github"></i></a>
+                            <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                            <a href="975800894" class="text-dark fs-5"><i class="bi bi-whatsapp"></i></a>
+                            <a href="975800894" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
+                            <a href="975800894" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>
+                            <a href="975800894" class="text-dark fs-5"><i class="bi bi-twitter"></i></a>
+                            <a href="975800894" class="text-dark fs-5"><i class="bi bi-tiktok"></i></a>
+                            <a href="https://discord.gg/WwRpaujw" class="text-dark fs-5"><i class="bi bi-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center position-relative">
+                    <div class="image-wrapper">
+                        <img src="img/Mi-foto-presentacion.png" alt="Kieberlyn Rodolfo" class="img-fluid hero-image shadow-lg">
+                    </div>
+                    
+                    <div class="position-absolute top-0 end-0 p-3 bg-white rounded-3 shadow-sm d-none d-md-block" style="transform: translate(20px, -20px);">
+                        <i class="bi bi-code-square text-primary fs-3"></i>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </header>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script src="js/main.js"></script>
 </body>
 </html>
