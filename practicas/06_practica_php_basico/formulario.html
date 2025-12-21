@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Formulario PHP</title>
+</head>
+<body>
+    <h1>Registro de Usuario</h1>
+    
+    <form action="procesar.php" method="POST">
+        
+        <label>Nombre:</label><br>
+        <input type="text" name="txtNombre" required><br><br>
+        
+        <label>Apellido:</label><br>
+        <input type="text" name="txtApellido" required><br><br>
+        
+        <label>Curso de interés:</label><br>
+        <select name="selCurso">
+            <option value="PHP">PHP Básico</option>
+            <option value="Java">Java Avanzado</option>
+            <option value="Python">Python para Datos</option>
+        </select><br><br>
+
+        <button type="submit">Enviar Registro</button>
+    </form>
+</body>
+</html>

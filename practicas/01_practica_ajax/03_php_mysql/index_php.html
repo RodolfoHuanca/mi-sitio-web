@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.js"></script> 
+    <title>AJAX con PHP y MySQL</title>
+</head>
+<body>
+    
+    <form action="procesar.php">
+        <input type="text" name="nombres" placeholder="nombres">
+        <input type="text" name="apellidos" placeholder="apellidos">
+        <input type="submit" value="Guardar">
+    </form>
+    
+    <div id="respuesta"></div>
+
+    <script>
+    $(document).ready(function () {
+        // 1. Interceptar el envío del formulario (al hacer clic en Guardar)
+        $('input[type=submit]').click(function () {
+            // Usa $.post para enviar los datos a procesar.php de forma asíncrona
+            $.post('procesar.php', $("form").serialize(), function (data) {
+                alert(data); // Muestra el mensaje "Guardado con exito" que envía PHP [cite: 322]
+                consultar(); // Refresca la lista de personas [cite: 323]
+                return false; // Evita que la página se recargue (comportamiento AJAX)
+            });
+            return false;
+        });
+
+        // 2. Función para consultar datos de la base de datos (JSON)
+        function consultar() {
+            $.ajax({
+                url: 'consultar.php',
+                dataType: "json",
+                beforeSend: function () {
+                    $('#respuesta').text('Cargando información')
+                },
+                success: function (data) {
+                    var cont = '';
+                    // Recorrer el array principal (cada persona)
+                    for (var item in data) {
+                        // Recorrer los campos de cada persona (ID, Nombres, Apellidos)
+                        for (var reg in data[item]) {
+                            cont += data[item][reg] + ", "; // Concatenar campos separados por coma [cite: 347]
+                        }
+                        cont += "<br>" // Salto de línea para cada persona [cite: 349]
+                    }
+                    $('#respuesta').html(cont) // Imprimir el contenido en el div [cite: 350]
+                }
+            })
+        }
+        
+        // 3. Ejecutar la consulta al cargar la página por primera vez
+        consultar(); // [cite: 341]
+    })
+    </script>
+</body>
+</html>

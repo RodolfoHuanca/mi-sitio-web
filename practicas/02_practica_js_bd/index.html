@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD JS LocalStorage</title>
+    <style>
+        /* Estilos básicos para que se vea ordenado como en la guía */
+        body { font-family: sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        input { padding: 8px; margin: 5px; width: 200px; }
+        button { padding: 8px 15px; cursor: pointer; background-color: #4CAF50; color: white; border: none; }
+        button:hover { opacity: 0.8; }
+        .btn-borrar { background-color: #f44336; }
+        .btn-editar { background-color: #008CBA; }
+    </style>
+</head>
+<body>
+
+    <h1>CRUD: Base de Datos con JavaScript</h1>
+    <h3>Guía Práctica Moderna (LocalStorage)</h3>
+
+    <div id="formulario">
+        <input type="hidden" id="inputId">
+        
+        <label>Nombres:</label>
+        <input type="text" id="inputNombres" placeholder="Ingrese nombres">
+        
+        <label>Apellidos:</label>
+        <input type="text" id="inputApellidos" placeholder="Ingrese apellidos">
+        
+        <br><br>
+        
+        <button onclick="guardarDatos()">Guardar</button>
+        <button onclick="borrarTodo()" class="btn-borrar">Borrar Todo</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            </tbody>
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.js"></script> 
+    <title>AJAX con JQuery</title>
+</head>
+<body>
+    <button>jquery</button>
+    <div id="respuesta"></div>
+
+    <script>
+    $(document).ready(function(){
+        $('button').click(function(){
+            // Inicia la petición AJAX con jQuery
+            $.ajax({
+                url: 'funcion.html', // Archivo HTML a solicitar
+                beforeSend: function(){
+                    // Muestra un mensaje de carga antes de enviar
+                    $('#respuesta').text('Cargando información')
+                },
+                success: function(data) {
+                    // Si es exitoso, inserta el contenido HTML (data) en el div
+                    $("#respuesta").html(data)
+                }
+            })
+        });
+    })
+    </script>
+</body>
+</html>
